@@ -12,6 +12,10 @@
     --secondary-color: #f3e1dc;
     --accent-color: #dda15e;
     --text-dark: #3a2e2e;
+    --background-color: #000; /* Black background */
+    --silver-background: #C0C0C0; /* Silver background */
+    --mint-green: #98FF98; /* Mint green color */
+    --button-background: #000; /* Black background for button */
   }
 
   * {
@@ -21,9 +25,11 @@
   body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: var(--secondary-color);
+    background: var(--background-color);
     color: var(--text-dark);
     line-height: 1.6;
+    background-image: linear-gradient(135deg, var(--accent-color) 25%, transparent 25%, transparent 75%, var(--silver-background) 75%, var(--silver-background));
+    background-size: 20px 20px; /* Adjust the size of the streaks */
   }
 
   a {
@@ -32,8 +38,8 @@
   }
 
   header {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+    background-color: var(--mint-green); /* Mint green for header */
+    color: var(--text-dark);
     padding: 1.2rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -62,7 +68,7 @@
   }
 
   .hero {
-    background: url('https://images.unsplash.com/photo-1542838687-1975b0996a61?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+    background: var(--silver-background); /* Silver background for hero */
     height: 70vh;
     color: var(--secondary-color);
     display: flex;
@@ -90,8 +96,8 @@
   }
 
   .btn-primary {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
+    background-color: var(--button-background); /* Black background for button */
+    color: var(--secondary-color);
     border: none;
     padding: 0.8rem 2rem;
     font-weight: 600;
@@ -250,8 +256,8 @@
 
   /* Footer */
   footer {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+    background-color: var(--mint-green); /* Mint green for footer */
+    color: var(--text-dark);
     text-align: center;
     padding: 1.7rem 1rem;
   }
@@ -261,7 +267,7 @@
   }
 
   .social-links a {
-    color: var(--secondary-color);
+    color: var(--text-dark);
     margin: 0 0.8rem;
     font-size: 1.4rem;
     transition: color 0.3s ease;
@@ -370,11 +376,9 @@
 
 <footer>
   <div class="social-links" aria-label="Social media links">
-    <a href="#" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener noreferrer">🌐 Facebook</a>
-    <a href="#" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
-    <a href="#" aria-label="Twitter" title="Twitter" target="_blank" rel="noopener noreferrer">🐦 Twitter</a>
+    <a href="https://www.instagram.com/_narthanasala_?utm_source=ig_web_button_share_sheet&igsh=cTJxYmZybG84dnI5" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
   </div>
-  &copy; 2024 Nartanasala. All rights reserved.
+  &copy; 2025 Nartanasala. All rights reserved.
 </footer>
 
 <script>
@@ -387,4 +391,3 @@
 </script>
 </body>
 </html>
-
