@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nartanasala - Elegant Sarees</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap');
+
+  :root {
+    --primary-color: #a52a2a;
+    --secondary-color: #f3e1dc;
+    --accent-color: #dda15e;
+    --text-dark: #3a2e2e;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--secondary-color);
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--primary-color);
+  }
+
+  header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+
+  header h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+  }
+
+  nav a {
+    margin-left: 1.8rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover {
+    color: var(--accent-color);
+  }
+
+  .hero {
+    background: url('https://images.unsplash.com/photo-1542838687-1975b0996a61?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+    height: 70vh;
+    color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+    box-shadow: inset 0 0 0 1000px rgba(165, 42, 42, 0.5);
+  }
+
+  .hero h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.4rem;
+    margin-bottom: 0.4rem;
+    text-shadow: 1.5px 1.5px 3px #311;
+  }
+
+  .hero p {
+    font-size: 1.3rem;
+    margin-bottom: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px #311;
+  }
+
+  .btn-primary {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(221,161,94,0.5);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+  }
+
+  main {
+    max-width: 1100px;
+    margin: 3rem auto 5rem auto;
+    padding: 0 1rem;
+  }
+
+  section h3 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.6rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--accent-color);
+    display: inline-block;
+  }
+
+  /* Featured sarees grid */
+  .saree-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.8rem;
+  }
+
+  .saree-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 18px rgba(165,42,42,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+  }
+
+  .saree-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(165,42,42,0.25);
+  }
+
+  .saree-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .card-content {
+    padding: 1rem 1.2rem 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card-content h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+  }
+
+  .card-content p {
+    font-size: 0.95rem;
+    color: #555;
+    flex-grow: 1;
+  }
+
+  .card-content .price {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    color: var(--accent-color);
+  }
+
+  /* About & Contact */
+  .about,
+  .contact {
+    margin-top: 4rem;
+    padding: 1rem 1.5rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 22px rgba(165,42,42,0.08);
+  }
+
+  .about p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #4b2a2a;
+  }
+
+  .contact form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact form label {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: var(--primary-color);
+  }
+
+  .contact form input,
+  .contact form textarea {
+    padding: 0.6rem;
+    margin-bottom: 1.4rem;
+    border-radius: 6px;
+    border: 1.8px solid #d7c7c7;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+  }
+
+  .contact form input:focus,
+  .contact form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+  }
+
+  .contact form textarea {
+    min-height: 90px;
+  }
+
+  .contact form button {
+    align-self: center;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 0.9rem 2.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(165,42,42,0.6);
+    transition: background-color 0.3s ease;
+  }
+
+  .contact form button:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+  }
+
+  /* Footer */
+  footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 1.7rem 1rem;
+  }
+
+  .social-links {
+    margin-bottom: 0.6rem;
+  }
+
+  .social-links a {
+    color: var(--secondary-color);
+    margin: 0 0.8rem;
+    font-size: 1.4rem;
+    transition: color 0.3s ease;
+  }
+
+  .social-links a:hover {
+    color: var(--accent-color);
+  }
+
+  /* Responsive for smaller screens */
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 2rem;
+    }
+    .hero h2 {
+      font-size: 2.4rem;
+    }
+    .hero p {
+      font-size: 1rem;
+    }
+  }
+
+</style>
+</head>
+<body>
+<header>
+  <h1>Nartanasala</h1>
+  <nav>
+    <a href="#featured">Featured</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" role="banner" aria-label="Welcome to Nartanasala">
+  <h2>Elegance Draped in Tradition</h2>
+  <p>Discover exquisite sarees that celebrate your timeless beauty</p>
+  <button class="btn-primary" onclick="document.getElementById('featured').scrollIntoView({ behavior: 'smooth' })">Shop Now</button>
+</section>
+
+<main>
+  <section id="featured" aria-label="Featured sarees">
+    <h3>Featured Sarees</h3>
+    <div class="saree-grid">
+      <article class="saree-card">
+        <img src="https://images.unsplash.com/photo-1574180045827-681f8a1a9622?auto=format&fit=crop&w=600&q=80" alt="Red silk saree with gold embroidery" />
+        <div class="card-content">
+          <h4>Red Silk Embroidery</h4>
+          <p>Luxurious red silk saree embellished with intricate golden embroidery, perfect for special occasions.</p>
+          <div class="price">₹12,999</div>
+        </div>
+      </article>
+
+      <article class="saree-card">
+        <img src="https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=600&q=80" alt="Cream and pink pastel saree" />
+        <div class="card-content">
+          <h4>Pastel Pink Cream</h4>
+          <p>Soft pastel pink and cream blend with delicate patterns to create a graceful and modern look.</p>
+          <div class="price">₹8,499</div>
+        </div>
+      </article>
+
+      <article class="saree-card">
+        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=600&q=80" alt="Green cotton traditional saree" />
+        <div class="card-content">
+          <h4>Traditional Green Cotton</h4>
+          <p>Comfortable green cotton saree with classic designs, ideal for festive days and casual wear.</p>
+          <div class="price">₹5,299</div>
+        </div>
+      </article>
+
+      <article class="saree-card">
+        <img src="https://images.unsplash.com/photo-1544056185-6f3631c4c355?auto=format&fit=crop&w=600&q=80" alt="Elegant white saree with silver accents" />
+        <div class="card-content">
+          <h4>White Elegance with Silver</h4>
+          <p>Elegant white saree adorned with subtle silver accents for a look that shines with class.</p>
+          <div class="price">₹10,999</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="about" class="about" aria-label="About Nartanasala">
+    <h3>About Nartanasala</h3>
+    <p>
+      At Nartanasala, we celebrate the vibrant traditions of India through our exclusive collection of sarees. Each piece is carefully selected to embody elegance, craftsmanship, and the rich cultural heritage that sarees represent. Whether you desire classic silk or contemporary designs, our store offers a stunning range to cater to your unique style and occasion.
+    </p>
+  </section>
+
+  <section id="contact" class="contact" aria-label="Contact Nartanasala">
+    <h3>Contact Us</h3>
+    <form id="contact-form" aria-label="Contact form for Nartanasala">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Your message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <div class="social-links" aria-label="Social media links">
+    <a href="#" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener noreferrer">🌐 Facebook</a>
+    <a href="#" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
+    <a href="#" aria-label="Twitter" title="Twitter" target="_blank" rel="noopener noreferrer">🐦 Twitter</a>
+  </div>
+  &copy; 2024 Nartanasala. All rights reserved.
+</footer>
+
+<script>
+  // Simple contact form submission handling
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Thank you for contacting Nartanasala! We will get back to you soon.');
+    this.reset();
+  });
+</script>
+</body>
+</html>
+
