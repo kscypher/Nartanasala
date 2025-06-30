@@ -8,13 +8,13 @@
   @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap');
 
   :root {
-    --primary-color: #1A1A1A; /* Black */
-    --secondary-color: #f3e1dc; /* Light color for text */
-    --accent-color: #dda15e; /* Accent color */
-    --text-dark: #3a2e2e; /* Dark text color */
-    --background-color: #63C5DA; /* Main background color */
-    --mint-green: #98FF98; /* Mint green color for header and footer */
-    --button-background: #000; /* Black background for button */
+    --primary-color: #1A1A1A;
+    --secondary-color: #f3e1dc;
+    --accent-color: #dda15e;
+    --text-dark: #3a2e2e;
+    --background-color: #63C5DA;
+    --mint-green: #98FF98;
+    --button-background: #000;
   }
 
   * {
@@ -24,7 +24,7 @@
   body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: var(--background-color); /* Main background color */
+    background: var(--background-color);
     color: var(--text-dark);
     line-height: 1.6;
   }
@@ -35,7 +35,7 @@
   }
 
   header {
-    background-color: var(--mint-green); /* Mint green for header */
+    background-color: var(--mint-green);
     color: var(--text-dark);
     padding: 1.2rem 2rem;
     display: flex;
@@ -45,12 +45,6 @@
     top: 0;
     z-index: 10;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  }
-
-  header h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2.8rem;
-    letter-spacing: 2px;
   }
 
   nav a {
@@ -65,7 +59,7 @@
   }
 
   .hero {
-    background: var(--background-color); /* Silver background for hero */
+    background: var(--background-color);
     height: 70vh;
     color: var(--secondary-color);
     display: flex;
@@ -93,7 +87,7 @@
   }
 
   .btn-primary {
-    background-color: var(--button-background); /* Black background for button */
+    background-color: var(--button-background);
     color: var(--secondary-color);
     border: none;
     padding: 0.8rem 2rem;
@@ -119,15 +113,15 @@
   section h3 {
     font-family: 'Great Vibes', cursive;
     font-size: 2.6rem;
-    color: var(--primary-color); /* Font color for headings */
+    color: var(--primary-color);
     margin-bottom: 2rem;
     border-bottom: 3px solid var(--accent-color);
     display: inline-block;
   }
 
   #featured {
-    background-color: var(--background-color); /* Background for featured sarees */
-    padding: 2rem 0; /* Padding for the section */
+    background-color: var(--background-color);
+    padding: 2rem 0;
   }
 
   .saree-grid {
@@ -186,7 +180,7 @@
 
   .about,
   .contact {
-    background-color: #63C5DA; /* Background for about and contact */
+    background-color: #63C5DA;
     margin-top: 4rem;
     padding: 1rem 1.5rem;
     border-radius: 12px;
@@ -255,7 +249,7 @@
   }
 
   footer {
-    background-color: var(--mint-green); /* Mint green for footer */
+    background-color: var(--mint-green);
     color: var(--text-dark);
     text-align: center;
     padding: 1.7rem 1rem;
@@ -287,12 +281,13 @@
       font-size: 1rem;
     }
   }
-
 </style>
 </head>
 <body>
 <header>
-  <h1>Narthanasala</h1>
+  <div style="display: flex; align-items: center;">
+    <img src="Narthanasala.jpeg" alt="Nartanasala Logo" style="height: 80px; margin-right: 15px;" />
+  </div>
   <nav>
     <a href="#featured">Featured</a>
     <a href="#about">About</a>
@@ -307,6 +302,7 @@
 </section>
 
 <main>
+  <!-- Featured Section -->
   <section id="featured" aria-label="Featured sarees">
     <h3>Featured Sarees</h3>
     <div class="saree-grid">
@@ -348,13 +344,15 @@
     </div>
   </section>
 
+  <!-- About Section -->
   <section id="about" class="about" aria-label="About Nartanasala">
-    <h3>About Narthanasala</h3>
+    <h3>About Nartanasala</h3>
     <p>
-      At Narthanasala, we celebrate the vibrant traditions of India through our exclusive collection of sarees. Each piece is carefully selected to embody elegance, craftsmanship, and the rich cultural heritage that sarees represent. Whether you desire classic silk or contemporary designs, our store offers a stunning range to cater to your unique style and occasion.
+      At Nartanasala, we celebrate the vibrant traditions of India through our exclusive collection of sarees. Each piece is carefully selected to embody elegance, craftsmanship, and the rich cultural heritage that sarees represent. Whether you desire classic silk or contemporary designs, our store offers a stunning range to cater to your unique style and occasion.
     </p>
   </section>
 
+  <!-- Contact Section -->
   <section id="contact" class="contact" aria-label="Contact Nartanasala">
     <h3>Contact Us</h3>
     <form id="contact-form" aria-label="Contact form for Nartanasala" onsubmit="sendWhatsAppMessage(event)">
