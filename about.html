@@ -6,49 +6,75 @@
   <title>About Us - Nartanasala</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap');
+
     :root {
-      --background-color: #2F6F5F;
-      --secondary-color: #f3e1dc;
+      --background-color: #ffffff;       /* White background */
+      --text-color: #2F6F5F;             /* Sea green font */
       --accent-color: #dda15e;
     }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
       background-color: var(--background-color);
-      color: var(--secondary-color);
+      color: var(--text-color);
     }
+
     header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 1rem 2rem;
       background-color: var(--background-color);
+      border-bottom: 1px solid #ccc;
     }
+
+    header img {
+      height: 120px;
+      object-fit: contain;
+    }
+
     nav a {
       margin-left: 1.2rem;
       font-weight: bold;
       text-decoration: none;
+      color: var(--text-color);
+    }
+
+    nav a:hover {
       color: var(--accent-color);
     }
+
     main {
       max-width: 1000px;
       margin: 2rem auto;
       padding: 1rem;
     }
+
     h1, h2 {
       text-align: center;
       font-family: 'Great Vibes', cursive;
+      color: var(--text-color);
     }
+
     p {
       font-size: 1.1rem;
       margin-bottom: 1.2rem;
       line-height: 1.6;
     }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      border-top: 1px solid #ccc;
+    }
   </style>
 </head>
 <body>
   <header>
-    <div><img src="Narthanasala.jpeg" alt="Logo" style="height: 120px;" /></div>
+    <div><img src="Narthanasala.jpeg" alt="Logo" /></div>
     <nav>
       <a href="index.html">Home</a>
       <a href="featured.html">Featured</a>
@@ -70,7 +96,7 @@
     </p>
   </main>
 
-  <footer style="text-align:center; padding:1rem;">
+  <footer>
     &copy; 2025 Nartanasala
   </footer>
 </body>
