@@ -6,57 +6,99 @@
   <title>Contact Us - Nartanasala</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
     :root {
-      --background-color: #2F6F5F;
+      --background-color: #ffffff;  /* White background */
       --accent-color: #dda15e;
-      --text-color: #f3e1dc;
+      --text-color: #2F6F5F;       /* Sea green text */
     }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
       background: var(--background-color);
       color: var(--text-color);
     }
+
     header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 1rem 2rem;
       background-color: var(--background-color);
+      border-bottom: 1px solid #ccc;
     }
+
     nav a {
       margin-left: 1.2rem;
       font-weight: bold;
       text-decoration: none;
+      color: var(--text-color);
+    }
+
+    nav a:hover {
       color: var(--accent-color);
     }
+
     form {
       max-width: 500px;
       margin: 2rem auto;
       display: flex;
       flex-direction: column;
       gap: 1rem;
+      background-color: #f9f9f9;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     }
+
     input, textarea {
       padding: 0.7rem;
       font-size: 1rem;
       border-radius: 6px;
       border: 1px solid #ccc;
-    }
-    button {
-      background: #000;
+      font-family: inherit;
       color: var(--text-color);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #888;
+    }
+
+    button {
+      background: var(--text-color);
+      color: white;
       padding: 0.9rem;
       border: none;
       border-radius: 30px;
       font-weight: bold;
       cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: var(--accent-color);
+      color: #000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      border-top: 1px solid #ccc;
+    }
+
+    img {
+      height: 120px;
+      object-fit: contain;
     }
   </style>
 </head>
 <body>
   <header>
-    <div><img src="Narthanasala.jpeg" alt="Logo" style="height: 120px; object-fit: contain;" /></div>
+    <div><img src="Narthanasala.jpeg" alt="Logo" /></div>
     <nav>
       <a href="index.html">Home</a>
       <a href="featured.html">Featured</a>
@@ -74,7 +116,7 @@
     <button type="submit">Send via WhatsApp</button>
   </form>
 
-  <footer style="text-align:center; padding:1rem;">
+  <footer>
     &copy; 2025 Nartanasala
   </footer>
 
