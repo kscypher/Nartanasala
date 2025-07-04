@@ -6,32 +6,42 @@
   <title>Home - Nartanasala</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap');
+
     :root {
-      --primary-color: #1A1A1A;
-      --secondary-color: #f3e1dc;
+      --primary-color: #2F6F5F; /* Sea Green */
+      --secondary-color: #2F6F5F;
       --accent-color: #dda15e;
-      --background-color: #2F6F5F;
-      --text-dark: #f3e1dc;
+      --background-color: #ffffff; /* White */
+      --button-bg: #000;
     }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
       background: var(--background-color);
-      color: var(--text-dark);
+      color: var(--primary-color);
     }
+
     header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 1rem 2rem;
       background-color: var(--background-color);
+      border-bottom: 2px solid var(--primary-color);
     }
+
     nav a {
       margin-left: 1.2rem;
       font-weight: bold;
       text-decoration: none;
+      color: var(--primary-color);
+    }
+
+    nav a:hover {
       color: var(--accent-color);
     }
+
     .hero {
       height: 70vh;
       display: flex;
@@ -40,28 +50,51 @@
       align-items: center;
       text-align: center;
     }
+
     .hero h2 {
       font-family: 'Great Vibes', cursive;
       font-size: 3.5rem;
+      color: var(--primary-color);
     }
+
     .hero p {
       font-size: 1.2rem;
       margin: 1rem 0;
+      color: var(--primary-color);
     }
+
     .btn {
       padding: 0.8rem 2rem;
-      background-color: #000;
-      color: var(--secondary-color);
+      background-color: var(--button-bg);
+      color: white;
       border: none;
       border-radius: 40px;
       font-weight: bold;
       cursor: pointer;
     }
+
+    .btn:hover {
+      background-color: var(--accent-color);
+      color: var(--primary-color);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: var(--background-color);
+      color: var(--primary-color);
+      border-top: 1px solid #ccc;
+    }
+
+    img {
+      height: 120px;
+      object-fit: contain;
+    }
   </style>
 </head>
 <body>
   <header>
-    <div><img src="Narthanasala.jpeg" alt="Logo" style="height: 120px; object-fit: contain;" /></div>
+    <div><img src="Narthanasala.jpeg" alt="Logo" /></div>
     <nav>
       <a href="index.html">Home</a>
       <a href="featured.html">Featured</a>
@@ -78,7 +111,7 @@
     <a href="featured.html"><button class="btn">Shop Now</button></a>
   </section>
 
-  <footer style="text-align:center; padding:1rem;">
+  <footer>
     &copy; 2025 Nartanasala
   </footer>
 </body>
