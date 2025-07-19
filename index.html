@@ -3,116 +3,326 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Home - Nartanasala</title>
+  <title>Nartanasala - Home</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap');
-
     :root {
-      --primary-color: #2F6F5F; /* Sea Green */
-      --secondary-color: #2F6F5F;
+      --background-color: #fffff0;
+      --text-color: #2F6F5F;
       --accent-color: #dda15e;
-      --background-color: #ffffff; /* White */
-      --button-bg: #000;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      background-color: var(--background-color);
+      color: var(--text-color);
     }
 
     body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: var(--background-color);
-      color: var(--primary-color);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
-    header {
+    .navbar {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       padding: 1rem 2rem;
       background-color: var(--background-color);
-      border-bottom: 2px solid var(--primary-color);
+      border-bottom: 1px solid #ccc;
+      flex-wrap: wrap;
     }
 
-    nav a {
-      margin-left: 1.2rem;
-      font-weight: bold;
+    .navbar-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .navbar img {
+      height: 80px;
+    }
+
+    .cart-icon {
+      font-size: 1.8rem;
       text-decoration: none;
-      color: var(--primary-color);
     }
 
-    nav a:hover {
+    .cart-icon:hover {
       color: var(--accent-color);
     }
 
-    .hero {
-      height: 70vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .hero h2 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3.5rem;
-      color: var(--primary-color);
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin: 1rem 0;
-      color: var(--primary-color);
-    }
-
-    .btn {
-      padding: 0.8rem 2rem;
-      background-color: var(--button-bg);
-      color: white;
-      border: none;
-      border-radius: 40px;
-      font-weight: bold;
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
       cursor: pointer;
     }
 
-    .btn:hover {
-      background-color: var(--accent-color);
-      color: var(--primary-color);
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-color);
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: var(--background-color);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      min-width: 180px;
+      z-index: 999;
+      border-radius: 4px;
+      padding: 0.5rem 0;
+    }
+
+    .dropdown-menu li a {
+      display: block;
+      padding: 0.6rem 1rem;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    main {
+      flex: 1;
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-color);
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .saree-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .saree-gallery img {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      cursor: zoom-in;
+      transition: transform 0.2s;
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 10px;
     }
 
     footer {
       text-align: center;
       padding: 1rem;
       background-color: var(--background-color);
-      color: var(--primary-color);
+      color: var(--text-color);
       border-top: 1px solid #ccc;
     }
 
-    img {
-      height: 120px;
-      object-fit: contain;
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: var(--background-color);
+        width: 100%;
+        padding: 1rem;
+        border-top: 1px solid #ccc;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .dropdown .dropdown-menu {
+        position: static;
+        box-shadow: none;
+      }
+
+      .dropdown.active .dropdown-menu {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar-left {
+        width: 100%;
+        justify-content: space-between;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div><img src="Narthanasala.jpeg" alt="Logo" /></div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="featured.html">Featured</a>
-      <a href="about.html">About</a>
-      <a href="offer.html">Offers</a>
-      <a href="why.html">Why Us</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+
+  <header class="navbar">
+    <div class="navbar-left">
+      <img src="Narthanasala.jpeg" alt="Logo" />
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li class="dropdown">
+        <a href="#">Sarees ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Featured</a></li>
+          <li><a href="silk.html">Silk Sarees</a></li> <!-- ✅ Updated link -->
+          <li><a href="#">Cotton</a></li>
+          <li><a href="#">Kalamkari</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Info ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="why.html">Why Us</a></li>
+          <li><a href="offer.html">What We Offer</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Settings ▾</a>
+        <ul class="dropdown-menu">
+          <li id="login-link"><a href="login.html">LogIn</a></li>
+          <li id="signup-link"><a href="signup.html">Sign Up</a></li>
+          <li id="logout-link" style="display: none;"><a href="#" onclick="logout()">Logout</a></li>
+          <li id="contact-link"><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </li>
+      <li><a href="cart.html" class="cart-icon">🛒</a></li>
+    </ul>
   </header>
 
-  <section class="hero">
-    <h2>Elegance Draped in Tradition</h2>
-    <p>Discover exquisite sarees that celebrate your timeless beauty</p>
-    <a href="featured.html"><button class="btn">Shop Now</button></a>
-  </section>
+  <main>
+    <h1>🧵 Welcome to Nartanasala</h1>
+    <p>
+      Discover the soul of Indian tradition with our exclusive saree collections. From timeless silks to modern drapes, Nartanasala brings culture, grace, and craftsmanship to your wardrobe.
+    </p>
+
+    <div class="saree-gallery">
+      <img src="img/k-saree.png" alt="Kalamkari Saree" class="zoomable" />
+      <img src="img/d-saree.png" alt="Designer Saree" class="zoomable" />
+    </div>
+  </main>
+
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="Zoomed Saree" />
+  </div>
 
   <footer>
-    &copy; 2025 Nartanasala
+    &copy; 2025 Nartanasala. All rights reserved.
   </footer>
+
+  <script>
+    // Responsive Menu
+    const toggleBtn = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+    toggleBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    // Login Logic
+    const loginLink = document.getElementById("login-link");
+    const signupLink = document.getElementById("signup-link");
+    const logoutLink = document.getElementById("logout-link");
+
+    if (!sessionStorage.getItem("sessionInitialized")) {
+      localStorage.removeItem("loggedIn");
+      sessionStorage.setItem("sessionInitialized", "true");
+    }
+
+    function updateMenu() {
+      const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+      loginLink.style.display = isLoggedIn ? "none" : "block";
+      signupLink.style.display = isLoggedIn ? "none" : "block";
+      logoutLink.style.display = isLoggedIn ? "block" : "none";
+    }
+
+    function logout() {
+      localStorage.removeItem("loggedIn");
+      updateMenu();
+      alert("Logged out successfully.");
+    }
+
+    updateMenu();
+
+    // Lightbox Image Zoom
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+
+    document.querySelectorAll(".zoomable").forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+      });
+    });
+
+    lightbox.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
+  </script>
+
 </body>
 </html>
